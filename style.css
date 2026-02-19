@@ -306,6 +306,62 @@ main {
   padding: 48px 24px 80px;
 }
 
+/* ---------- Tool Banner ---------- */
+.tool-banner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 auto 2rem;
+  max-width: 900px;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, rgba(155,93,229,0.08) 0%, rgba(155,93,229,0.03) 100%);
+  border: 1px solid rgba(155,93,229,0.25);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.tool-banner:hover {
+  border-color: rgba(155,93,229,0.5);
+  background: linear-gradient(135deg, rgba(155,93,229,0.13) 0%, rgba(155,93,229,0.06) 100%);
+  text-decoration: none;
+}
+.tool-banner-icon {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  background: rgba(155,93,229,0.15);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}
+.tool-banner-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.tool-banner-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.tool-banner-sub {
+  font-size: 0.8rem;
+  color: var(--text-3);
+}
+.tool-banner-cta {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+@media (max-width: 560px) {
+  .tool-banner-cta { display: none; }
+}
+
 /* ---------- Tags ---------- */
 .tags {
   display: flex;

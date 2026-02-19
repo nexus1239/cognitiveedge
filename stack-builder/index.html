@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nootropic Stack Builder — Cognitive Edge</title>
+  <meta name="description" content="Build, visualise, and share your nootropic stack. 45+ compounds with interaction warnings, benefit coverage, cost estimate, and a shareable URL.">
+  <meta property="og:title" content="Nootropic Stack Builder — Cognitive Edge">
+  <meta property="og:description" content="Build, visualise, and share your nootropic stack. 45+ compounds with interaction warnings, benefit coverage, cost estimate, and shareable URL.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cognitiveedge.org/stack-builder/">
+  <meta property="og:image" content="https://cognitiveedge.org/og-image.svg">
+  <meta property="og:site_name" content="Cognitive Edge">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nootropic Stack Builder — Cognitive Edge">
+  <meta name="twitter:description" content="Build, visualise, and share your nootropic stack. 45+ compounds with interaction warnings, benefit coverage, cost estimate, and shareable URL.">
+  <meta name="twitter:image" content="https://cognitiveedge.org/og-image.svg">
+  <meta name="theme-color" content="#09090b">
+  <link rel="canonical" href="https://cognitiveedge.org/stack-builder/">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Override stack-builder CSS vars to match Cognitive Edge theme ── */
+    :root {
+      --bg:          #09090b;
+      --bg-2:        #111113;
+      --bg-3:        #18181b;
+      --bg-4:        #1f1f23;
+      --border:      #27272a;
+      --border-2:    #3f3f46;
+      --text:        #f4f4f5;
+      --text-2:      #a1a1aa;
+      --text-3:      #71717a;
+      --accent:      #9b5de5;
+      --accent-dim:  rgba(155,93,229,0.12);
+      --accent-dim2: rgba(155,93,229,0.06);
+    }
+    /* Use Cognitive Edge font */
+    body { font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif; }
+    /* Restyle nav to match CE nav */
+    .nav {
+      background: rgba(9,9,11,0.92);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { font-weight: 800; letter-spacing: -0.02em; gap: 0.5rem; }
+    .nav-logo-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      border-radius: 6px;
+    }
+    /* hero accent colour */
+    .accent { color: var(--accent); }
+    /* category filter active state */
+    .cat-btn.active {
+      background: rgba(155,93,229,0.12);
+      color: #9b5de5;
+      border-color: rgba(155,93,229,0.25);
+    }
+    /* btn-add in-stack */
+    .btn-add.in-stack {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .btn-add {
+      background: rgba(155,93,229,0.12);
+      color: #9b5de5;
+      border-color: rgba(155,93,229,0.2);
+    }
+    .btn-add:hover { background: rgba(155,93,229,0.22); }
+    /* stat value */
+    .stat-value { color: var(--accent); }
+    /* search focus */
+    .search-input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(155,93,229,0.12);
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Nootropic Stack Builder",
+    "description": "Build, visualise, and share your nootropic stack. 45+ compounds with interaction warnings, benefit coverage, cost estimate, and a shareable URL.",
+    "url": "https://cognitiveedge.org/stack-builder/",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Web",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Organization", "name": "Cognitive Edge", "url": "https://cognitiveedge.org" }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <span class="nav-logo-mark">CE</span>
+        Cognitive Edge
+      </a>
+      <span class="nav-sep">›</span>
+      <span class="nav-title">Stack Builder</span>
+      <div class="nav-actions">
+        <a href="../index.html" class="btn btn-ghost" style="text-decoration:none">← Guides</a>
+        <button class="btn btn-ghost" id="btn-share" title="Share stack">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          Share
+        </button>
+        <button class="btn btn-ghost" id="btn-embed" title="Embed">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          Embed
+        </button>
+        <button class="btn btn-ghost" id="btn-clear" title="Clear stack">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/></svg>
+          Clear
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="hero">
+    <h1 class="hero-title">Nootropic <span class="accent">Stack Builder</span></h1>
+    <p class="hero-sub">45+ compounds. Click to build your stack — see interactions, benefit coverage, estimated cost, and share with a link.</p>
+  </header>
+
+  <!-- LAYOUT -->
+  <div class="layout" id="layout">
+
+    <!-- LEFT: compound browser -->
+    <aside class="panel panel-browser">
+      <div class="panel-header">
+        <h2 class="panel-title">Compounds</h2>
+        <span class="compound-count" id="compound-count">45</span>
+      </div>
+      <div class="search-wrap">
+        <svg class="search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input class="search-input" type="search" id="search" placeholder="Search compounds…" autocomplete="off">
+      </div>
+      <div class="cat-filter" id="cat-filter">
+        <button class="cat-btn active" data-cat="all">All</button>
+        <button class="cat-btn" data-cat="racetam">Racetams</button>
+        <button class="cat-btn" data-cat="choline">Choline</button>
+        <button class="cat-btn" data-cat="adaptogen">Adaptogens</button>
+        <button class="cat-btn" data-cat="amino">Amino Acids</button>
+        <button class="cat-btn" data-cat="herb">Herbs</button>
+        <button class="cat-btn" data-cat="vitamin">Vitamins</button>
+        <button class="cat-btn" data-cat="peptide">Peptides</button>
+        <button class="cat-btn" data-cat="other">Other</button>
+      </div>
+      <div class="compound-grid" id="compound-grid"></div>
+    </aside>
+
+    <!-- RIGHT: stack panel -->
+    <main class="panel panel-stack">
+      <div class="panel-header">
+        <h2 class="panel-title">Your Stack</h2>
+        <span class="stack-count" id="stack-count">0 compounds</span>
+      </div>
+      <div class="stack-empty" id="stack-empty">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        <p>Click compounds on the left to add them to your stack</p>
+      </div>
+      <div class="stack-list" id="stack-list"></div>
+      <div class="interaction-section" id="interaction-section" style="display:none">
+        <h3 class="section-label">Interactions</h3>
+        <div class="interaction-list" id="interaction-list"></div>
+      </div>
+      <div class="summary-section" id="summary-section" style="display:none">
+        <h3 class="section-label">Stack Summary</h3>
+        <div class="summary-grid">
+          <div class="stat-card"><span class="stat-value" id="stat-pills">—</span><span class="stat-label">pills/day</span></div>
+          <div class="stat-card"><span class="stat-value" id="stat-cost">—</span><span class="stat-label">est. $/month</span></div>
+          <div class="stat-card"><span class="stat-value" id="stat-compounds">0</span><span class="stat-label">compounds</span></div>
+          <div class="stat-card"><span class="stat-value" id="stat-score">—</span><span class="stat-label">balance score</span></div>
+        </div>
+        <h3 class="section-label" style="margin-top:1.5rem">Benefit Coverage</h3>
+        <div class="benefit-bars" id="benefit-bars"></div>
+        <div class="disclaimer">
+          <strong>Educational purposes only.</strong> Not medical advice. Consult a healthcare professional before using any cognitive enhancement compound.
+          <br><a href="../index.html" style="color:var(--accent);margin-top:0.5rem;display:inline-block">Read the evidence-based guides →</a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- SHARE MODAL -->
+  <div class="modal-backdrop" id="share-modal" style="display:none">
+    <div class="modal">
+      <button class="modal-close" data-modal="share-modal">✕</button>
+      <h2 class="modal-title">Share Your Stack</h2>
+      <p class="modal-sub">Anyone with this link can view your stack.</p>
+      <div class="copy-row">
+        <input class="copy-input" id="share-url" readonly>
+        <button class="btn btn-primary" id="btn-copy-url">Copy</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- EMBED MODAL -->
+  <div class="modal-backdrop" id="embed-modal" style="display:none">
+    <div class="modal">
+      <button class="modal-close" data-modal="embed-modal">✕</button>
+      <h2 class="modal-title">Embed This Stack</h2>
+      <p class="modal-sub">Paste this snippet into any webpage to embed the stack builder with your current stack pre-loaded.</p>
+      <div class="copy-row">
+        <textarea class="copy-input embed-textarea" id="embed-code" readonly rows="4"></textarea>
+        <button class="btn btn-primary" id="btn-copy-embed">Copy</button>
+      </div>
+      <p class="embed-note">Powered by <a href="https://cognitiveedge.org" target="_blank" rel="noopener">Cognitive Edge</a></p>
+    </div>
+  </div>
+
+  <!-- TOOLTIP -->
+  <div class="tooltip" id="tooltip" style="display:none"></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
