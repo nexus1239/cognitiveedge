@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#09090b"/>
+  <!-- dot grid -->
+  <defs>
+    <pattern id="dots" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#27272d" opacity="0.8"/>
+    </pattern>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#9b5de5" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#9b5de5" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+  <ellipse cx="600" cy="315" rx="500" ry="350" fill="url(#glow)"/>
+  <!-- logo mark -->
+  <rect x="88" y="180" width="56" height="56" rx="14" fill="#9b5de5"/>
+  <text x="116" y="222" text-anchor="middle" font-family="system-ui,sans-serif" font-weight="800" font-size="26" fill="#fff" letter-spacing="-1">CE</text>
+  <!-- headline -->
+  <text x="88" y="320" font-family="system-ui,sans-serif" font-weight="800" font-size="68" fill="#f0f0f5" letter-spacing="-3">Cognitive Edge</text>
+  <text x="88" y="390" font-family="system-ui,sans-serif" font-weight="400" font-size="30" fill="#8b8b9a">Research-backed guides on modafinil, atomoxetine,</text>
+  <text x="88" y="430" font-family="system-ui,sans-serif" font-weight="400" font-size="30" fill="#8b8b9a">piracetam, and the science of cognitive enhancement.</text>
+  <!-- domain pill -->
+  <rect x="88" y="480" width="280" height="42" rx="21" fill="#18181d" stroke="#27272d" stroke-width="1"/>
+  <text x="228" y="507" text-anchor="middle" font-family="system-ui,sans-serif" font-weight="600" font-size="18" fill="#8b8b9a">cognitiveedge.org</text>
+</svg>
