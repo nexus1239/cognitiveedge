@@ -389,14 +389,42 @@ function getEmbedCode() {
 }
 
 function copyText(text, btn) {
-  navigator.clipboard.writeText(text).then(() => {
+  function onSuccess() {
     const orig = btn.textContent;
     btn.textContent = 'Copied!';
     setTimeout(() => { btn.textContent = orig; }, 1500);
     toast('Copied to clipboard');
-  }).catch(() => {
-    toast('Copy failed — select text manually');
-  });
+  }
+
+  function fallbackCopy() {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    // Prevent scrolling to bottom on iOS
+    textarea.style.position = 'fixed';
+    textarea.style.left = '-9999px';
+    textarea.style.top = '-9999px';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.focus();
+    textarea.select();
+    try {
+      const ok = document.execCommand('copy');
+      if (ok) {
+        onSuccess();
+      } else {
+        toast('Copy failed — select text manually');
+      }
+    } catch (err) {
+      toast('Copy failed — select text manually');
+    }
+    document.body.removeChild(textarea);
+  }
+
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(onSuccess).catch(fallbackCopy);
+  } else {
+    fallbackCopy();
+  }
 }
 
 /* ===== MODALS ===== */
