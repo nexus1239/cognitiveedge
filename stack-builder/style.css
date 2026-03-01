@@ -782,6 +782,126 @@ a:hover { text-decoration: underline; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 3px; }
 
+/* ===== MOBILE BREAKPOINTS (under 600px) ===== */
+@media (max-width: 600px) {
+  /* Stack the two-column layout vertically */
+  .layout {
+    grid-template-columns: 1fr;
+    padding: 0 0.75rem 2rem;
+    gap: 1rem;
+  }
+
+  /* Make browser panel non-sticky and shorter on mobile */
+  .panel-browser {
+    position: static;
+    max-height: 420px;
+  }
+
+  /* Make stack panel fill width */
+  .panel-stack {
+    min-height: 300px;
+  }
+
+  /* Responsive benefit bar labels (not fixed width) */
+  .benefit-row {
+    grid-template-columns: auto 1fr 28px;
+  }
+
+  .benefit-label {
+    min-width: 0;
+    text-align: left;
+  }
+
+  /* Nav actions: hide text labels, keep icons */
+  .nav-inner {
+    padding: 0 0.75rem;
+    gap: 0.4rem;
+  }
+
+  .nav-title {
+    font-size: 0.8rem;
+  }
+
+  .nav-actions {
+    gap: 0.25rem;
+  }
+
+  .nav-actions .btn {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .nav-actions .btn svg {
+    flex-shrink: 0;
+  }
+
+  /* Hero adjustments */
+  .hero {
+    padding: 2rem 1rem 1.5rem;
+  }
+
+  .hero-sub {
+    font-size: 0.88rem;
+  }
+
+  /* Full-width buttons and cards */
+  .compound-card {
+    padding: 0.5rem 0.6rem;
+  }
+
+  .stack-item {
+    padding: 0.6rem 0.75rem;
+  }
+
+  /* Full-width copy rows in modals */
+  .copy-row {
+    flex-direction: column;
+  }
+
+  .copy-row .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Modal sizing */
+  .modal-backdrop {
+    padding: 0.75rem;
+  }
+
+  .modal {
+    padding: 1.5rem;
+  }
+
+  /* Stat cards in summary */
+  .summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Category filter: allow full-width scrolling */
+  .cat-filter {
+    gap: 0.25rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .cat-btn {
+    padding: 0.18rem 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  /* Stack empty state */
+  .stack-empty {
+    padding: 2.5rem 1.5rem;
+  }
+
+  /* Toast position */
+  .toast {
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    text-align: center;
+  }
+}
+
 /* ===== EMBED MODE ===== */
 body.embed-mode .nav { display: none; }
 body.embed-mode .hero { display: none; }
