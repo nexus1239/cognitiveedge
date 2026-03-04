@@ -1,7 +1,7 @@
 # CognitiveEdge
 
 - **Type:** Static HTML blog
-- **Domain:** cognitiveedge.org
+- **Domain:** cognitiveedges.org
 - **Created:** 2025
 - **Stack:** HTML/CSS/JS (no build step)
 

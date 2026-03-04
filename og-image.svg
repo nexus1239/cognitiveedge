@@ -21,5 +21,5 @@
   <text x="88" y="430" font-family="system-ui,sans-serif" font-weight="400" font-size="30" fill="#8b8b9a">piracetam, and the science of cognitive enhancement.</text>
   <!-- domain pill -->
   <rect x="88" y="480" width="280" height="42" rx="21" fill="#18181d" stroke="#27272d" stroke-width="1"/>
-  <text x="228" y="507" text-anchor="middle" font-family="system-ui,sans-serif" font-weight="600" font-size="18" fill="#8b8b9a">cognitiveedge.org</text>
+  <text x="228" y="507" text-anchor="middle" font-family="system-ui,sans-serif" font-weight="600" font-size="18" fill="#8b8b9a">cognitiveedges.org</text>
 </svg>

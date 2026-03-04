@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cognitiveedge.org/sitemap.xml
+Sitemap: https://cognitiveedges.org/sitemap.xml
